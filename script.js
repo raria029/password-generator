@@ -1,4 +1,4 @@
-// Assignment code here
+// Number & Range Selector/ Syncing the two
 const numberselector = document.getElementById ('numberselector')
 const rangeselector = document.getElementById ('rangeselector')
 numberselector.addEventListener('input', syncselector)
@@ -12,15 +12,25 @@ function syncselector(e) {
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-function writePassword() {
+function writePassword(rangeamount, lowercaseletters, uppercaseletters, specialcharacters, numbers) {
+  const rangeamount = numberselector.value
+  const lowercaseletters = lowercaseletters.checked
+  const uppercaseletters = uppercaseletters.checked
+  const numbers = numbers.checked
+  const specialcharacters = specialcharacters.checked
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  passwordText.value = password; 
 
 }
-
 // Add event listener to generate button
 //document.getElementById("generate").onclick = function () {writePassword();
-document.getElementById("criteria").addEventListener("click", function() {document.getElementById("criteria").style.visibility = 'flex'});
+document.getElementById("generate").addEventListener("click", function() {
+  if (document.querySelector(".criteria").style.display == ""){
+      document.querySelector(".criteria").style.display = 'flex';
+  } else {
+    console.log("write password")
+  }
+});
 //generateBtn.addEventListener("click", writePassword);
