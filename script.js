@@ -51,7 +51,8 @@ function arrayfromlowtohigh(low, high){
 
 
 // Add event listener to generate button
-//document.getElementById("generate").onclick = function () {writePassword();
+var button = document.getElementById("generate");
+
 document.getElementById("generate").addEventListener("click", function() {
   if (document.querySelector(".criteria").style.display == ""){
       document.querySelector(".criteria").style.display = 'flex';
@@ -59,4 +60,4 @@ document.getElementById("generate").addEventListener("click", function() {
     console.log("write password")
   }
 });
-//generateBtn.addEventListener("click", writePassword);
+button.addEventListener("click", writePassword);
