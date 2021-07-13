@@ -12,27 +12,18 @@ var specialcharacters = arrayfromlowtohigh(33,47).concat(
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
+const rangeamount = numberselector.value
+const lowercaseletters = lowercaseletters.checked
+const uppercaseletters = uppercaseletters.checked
+const numbers = numbers.checked
+const specialcharacters = specialcharacters.checked
 
 // Write password to the #password input
-function writePassword(rangeamount, lowercaseletters, uppercaseletters, specialcharacters, numbers) {
-  const rangeamount = numberselector.value
-  const lowercaseletters = lowercaseletters.checked
-  const uppercaseletters = uppercaseletters.checked
-  const numbers = numbers.checked
-  const specialcharacters = specialcharacters.checked
+function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-​
   passwordText.value = password; 
 ​}
 
 // Add event listener to generate button
-var button = document.getElementById("generate");
-
-document.getElementById("generate").addEventListener("click", function() {
-  if (document.querySelector(".criteria").style.display == ""){
-      document.querySelector(".criteria").style.display = 'flex';
-  } else {
-    console.log("write password")
-  }
-});
+generateBtn.addEventListener("click", writePassword);
