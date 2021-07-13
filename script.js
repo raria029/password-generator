@@ -1,16 +1,8 @@
-// Char codes as variables
-String.arrayfromlowtohigh(65)
-var lowercaseletter = arrayfromlowtohigh(97,122)
-var uppercaseletters = arrayfromlowtohigh(65,90)
-var numbers = arrayfromlowtohigh(48,57)
-var symbols = arrayfromlowtohigh(33,47).concat(
-  arrayfromlowtohigh(58,64)
-).concat(
-  arrayfromlowtohigh(91,96)
-).concat(
-  arrayfromlowtohigh(123,126)
-)
-
+// variables defined
+var lowercaseletters = "abcdefghijklmnopqrstuvwxyz";
+var uppercaseletters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var numbers = "0123456789";
+var symbols = " ~`! @#$%^&*()_-+={[}]|<,>.?/";
 // Password Criteria for User to choose
 function generatePassword(){
   // conditions for the code to loop
@@ -25,6 +17,19 @@ function generatePassword(){
   var uppercaseletters = window.confirm("I would like to include Uppercase Letters in my password.");
   var numbers = window.confirm("I would like to include Numbers in my password.");
   var symbols = window.confirm("I would like to include Symbols in my password.");
+}
+// Generating password
+var passwordcreated = [];
+var generatingpassword = "";
+
+if (lowercaseletters) generatingpassword = generatingpassword.concat(lowercaseletters);
+if (uppercaseletters) generatingpassword = generatingpassword.concat(uppercaseletters);
+if (numbers) generatingpassword = generatingpassword.concat(numbers);
+if (symbols) generatingpassword = generatingpassword.concat(symbols);
+
+while (passwordcreated.length = passwordlength){
+  var completepassword = generatingpassword [Math.random * generatingpassword.length]
+  passwordcreated.push(completepassword);
 }
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
